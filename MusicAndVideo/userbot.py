@@ -30,7 +30,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(filters.command(["بنك"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["السرعه"], prefixes=f"{HNDLR}"))
 async def ping(client, m: Message):
     await m.delete()
     start = time()
@@ -40,12 +40,12 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>-›  بنك</b> `{delta_ping * 1000:.3f} ms` \n<b>-›  الوقت</b> - `{uptime}`"
+        f"<b>-›  </b> `{delta_ping * 1000:.3f} ms` \n<b>-›  </b> - `{uptime}`"
     )
 
 
 @Client.on_message(
-    filters.user(SUDO_USERS) & filters.command(["اعادة تشغيل"], prefixes=f"{HNDLR}")
+    filters.user(SUDO_USERS) & filters.command(["تحديث"], prefixes=f"{HNDLR}")
 )
 async def restart(client, m: Message):
     await m.delete()
@@ -58,7 +58,7 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**-›  ياެمطوࢪي تم اެعادةه تشغيݪ اެݪحساب**")
+    await loli.edit("**-›  هلا يا مبرمج السورس تم تحديث جميع البوتات**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 
@@ -70,15 +70,15 @@ async def help(client, m: Message):
 <b>هݪاެ بࢪۅ 🥇 {m.from_user.mention}!
 
 🩸 يمديك تستخدم ذي الاوامر في المجموعة والخاص 
--›  {HNDLR}ش - بالرد على ملف صوتي او اسم اغنية 
--›  {HNDLR}ف  - بالرد على مقطع فيديو او اسم فيديو
--›  {HNDLR}الانتضار - لرؤية قائمة الانتضار
--›  {HNDLR}بنك - لروية بنك الحساب
+-›  {HNDLR}فالكون شغل - بالرد على ملف صوتي او اسم اغنية 
+-›  {HNDLR}/vplay  - بالرد على مقطع فيديو او اسم فيديو
+-›  {HNDLR}الانتظار - لرؤية قائمة الانتظار
+-›  {HNDLR}السرعه  - لروية سرعه البوت
 -›  {HNDLR}الاوامر - لرؤية اوامر المشرفين
 -›  {HNDLR}بلش - لاستمرار الأغنية المتوقفة مؤقتا
 -›  {HNDLR}كتم - لكتم صوت الحساب
--›  {HNDLR}تخ - لتخطي اغنية من الانتضار
--›  {HNDLR}بحث او ب - لبحث اغنية من اليوتيوب
--›  {HNDLR}ك - لايقاف تشغيل جميع الاغاني</b>
+-›  {HNDLR}فالكون الي بعده - لتخطي اغنية من الانتظار
+-›  {HNDLR}بحث - لبحث اغنية من اليوتيوب
+-›  {HNDLR}فالكون وقف - لايقاف تشغيل جميع الاغاني</b>
 """
     await m.reply(HELP)
