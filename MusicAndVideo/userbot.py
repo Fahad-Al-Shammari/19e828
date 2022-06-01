@@ -67,7 +67,7 @@ async def restart(client, m: Message):
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
-<b>هݪاެ بࢪۅ 🥇 {m.from_user.mention}!
+<b> هلا يا 🥇 {m.from_user.mention}!
 
  يمديك تستخدم ذي الاوامر في المجموعة والخاص 
 -›  {HNDLR}فالكون شغل - بالرد على ملف صوتي او اسم اغنية 
