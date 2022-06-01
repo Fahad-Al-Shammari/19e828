@@ -57,7 +57,7 @@ async def stop(client, m: Message):
         await m.reply("**معݪش ، ماެفي شي مشتغݪ ياެعيني 🌵.**")
 
 
-@Client.on_message(filters.command(["بلش"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ابدء"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def pause(client, m: Message):
     await m.delete()
