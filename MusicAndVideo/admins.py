@@ -7,7 +7,7 @@ from MusicAndVideo.helpers.handlers import skip_current_song, skip_item
 from MusicAndVideo.helpers.queues import QUEUE, clear_queue
 
 
-@Client.on_message(filters.command(["تخ"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["فالكون الي بعده"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def skip(client, m: Message):
     await m.delete()
@@ -41,7 +41,7 @@ async def skip(client, m: Message):
             await m.reply(OP)
 
 
-@Client.on_message(filters.command(["ك", "ايقاف"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["فالكون وقف"], prefixes=f"{HNDLR}"))
 @authorized_users_only
 async def stop(client, m: Message):
     await m.delete()
