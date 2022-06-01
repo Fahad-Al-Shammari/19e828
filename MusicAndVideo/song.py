@@ -17,7 +17,7 @@ from yt_dlp import YoutubeDL
 from config import HNDLR
 
 
-@Client.on_message(filters.command(["بحث", "ب"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["بحث"], prefixes=f"{HNDLR}"))
 async def song(client, message: Message):
     urlissed = get_text(message)
     if not urlissed:
